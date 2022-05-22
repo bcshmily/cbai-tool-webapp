@@ -12,8 +12,8 @@ public class IndexService implements IIndexService {
 
     @Override
     public void execute(String projectId, List<MenuDto> menuList) {
-        menuList.add(new MenuDto("サンプル", "/sample/", "サンプル画面"));
-//        menuList.add(new MenuDto("文件处理", "/fileconvert/", "自定义文件处理"));
+        menuList.add(new MenuDto("文件处理", "/fileconvert/", "自定义文件处理"));
+        menuList.add(new MenuDto("内容转换Sample", "/sample/", "内容转换Sample"));
     }
 
 }
