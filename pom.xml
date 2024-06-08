@@ -6,7 +6,7 @@
     <parent>
         <groupId>cbai</groupId>
         <artifactId>cbai-tool-webapp-parent</artifactId>
-        <version>1.0.0</version>
+        <version>1.0.1-SNAPSHOT</version>
         <relativePath />
     </parent>
     <artifactId>cbai-tool-webapp</artifactId>
@@ -19,7 +19,6 @@
         <dependency>
             <groupId>cbai</groupId>
             <artifactId>cbai-tool-common-webapp</artifactId>
-            <version>1.0.0</version>
         </dependency>
     </dependencies>
     <repositories>
