@@ -1,18 +1,11 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org" layout:decorate="~{common/layout.html}">
 <head>
-<meta http-equiv="x-ua-compatible" content="IE=edge">
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta charset="UTF-8">
 <title>Sample</title>
 <meta name="description" content="Sample">
 
-<link rel="stylesheet" th:href="@{/webjars/bootstrap/4.4.1-1/css/bootstrap.min.css}" />
-<link rel="stylesheet" th:href="@{/css/base.css}" />
 <link rel="stylesheet" th:href="@{/css/sample.css}" />
-<script type="text/javascript" th:src="@{/webjars/jquery/3.4.0/jquery.min.js}"></script>
-<script type="text/javascript" th:src="@{/webjars/bootstrap/4.4.1-1/js/bootstrap.min.js}"></script>
-<script type="text/javascript" th:src="@{/js/base.js}"></script>
 <script type="text/javascript" th:src="@{/js/sample.js}"></script>
 
 <script type="text/javascript">
@@ -44,29 +37,33 @@
 </style>
 </head>
 <body>
-	<div class="container-fluid">
-		<form method="POST" action="/" enctype="multipart/form-data">
-			<h5>サンプル</h5>
-			<div id="headerArea"></div>
-			<div id="divConvert" class="form-group">
-				<table>
-					<thead>
-						<tr>
-							<th>输入</th>
-							<th></th>
-							<th>输出</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td><textarea class="form-control" id="srcValue" rows="30" style="word-wrap: normal; width: 600px; overflow: auto;" th:placeholder="输入"></textarea></td>
-							<td><input type="button" value="->" onclick='doConvert()' class="btn btn-primary" /></td>
-							<td><textarea class="form-control" id="destValue" rows="30" style="word-wrap: normal; width: 800px; overflow: auto;" placeholder="输出"></textarea></td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-		</form>
-	</div>
+  <th:block layout:fragment="windowTitle">
+  サンプル
+  </th:block>
+  <div layout:fragment="content" class="container-fluid">
+    <form method="POST" action="/" enctype="multipart/form-data">
+      <div id="headerArea"></div>
+      <div id="divConvert" class="form-group">
+        <table>
+          <thead>
+            <tr>
+              <th>输入</th>
+              <th></th>
+              <th>输出</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><textarea class="form-control" id="srcValue" rows="30" style="word-wrap: normal; width: 600px; overflow: auto;"
+                  th:placeholder="输入"></textarea></td>
+              <td><input type="button" value="->" onclick='doConvert()' class="btn btn-primary" /></td>
+              <td><textarea class="form-control" id="destValue" rows="30" style="word-wrap: normal; width: 800px; overflow: auto;"
+                  placeholder="输出"></textarea></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </form>
+  </div>
 </body>
 </html>
